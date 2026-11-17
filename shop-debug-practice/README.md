@@ -63,3 +63,25 @@ investigated independently. Persistence and HTTP are outside this exercise.
 
 In coach mode, work through one failure at a time: state the expected result, observed
 result, and relevant contract before changing code. Ask for a hint if you get stuck.
+
+## Additional practice
+
+Four more services provide an additional round in the same project:
+
+| Class | Responsibility |
+| --- | --- |
+| `ProductSearch` | Name search and paginated product listings |
+| `BulkPricingService` | Quantity-based unit prices and totals |
+| `ExpiringCache` | Clock-based entry lifetime |
+| `ReturnPolicy` | Order eligibility and delivery-based return windows |
+
+Each class has a `Spec:` contract and starter tests. As with the original round, some
+contract rules need new tests. All time-based tests use controlled clocks and no sleeps.
+
+Run only the additional round:
+
+```sh
+mvn '-Dtest=ProductSearchTest,BulkPricingServiceTest,ExpiringCacheTest,ReturnPolicyTest' test
+```
+
+Run `mvn test` to include both rounds.
